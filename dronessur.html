@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dronessur</title>
+    <link rel="stylesheet" type="text/css" href="estilo_dronessur.css" />
+    <link rel="icon" href="fotos/logo_dronessur.png">
+    <script src="traduccion_dronessur.js"></script>
+    <script src="funciones_dronessur.js"></script>
+    <script>
+        // Carga el idioma al cargar la página
+        window.onload = loadLanguage;
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <img id="logo" src="fotos/logo_dronessur.png" alt="Logo de Dronessur">
+        <h1>Dronessur</h1>
+        <nav>
+            <ul id="cabecera">
+                <li><a href="#servicios" id="servicios-link" data-translate-key="menu_servicios">Servicios</a></li>
+                <li><a href="#contacto" id="contacto-link" data-translate-key="menu_contacto">Contacto</a></li>
+                <li><a href="index.html" id="drones-link" data-translate-key="menu_drones">Electricidad</a></li>
+            </ul>
+        </nav>
+        <div id="language">
+            <select onchange="translatePage()">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="sv">Svenska</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+    
+    <section id="intro">
+        <h2 data-translate-key="intro_title">¡Capturando el mundo desde el cielo!</h2>
+        <p id="introduccion" data-translate-key="intro_text">Somos Dronessur, una empresa especializada en filmaciones aéreas y servicios con drones.<br> 
+            Con más de una década de experiencia, nos enorgullece ofrecer imágenes impresionantes y videos de alta calidad desde las alturas.<br>
+            Mantenemos una formalidad y profesionalidad ejemplares en todos nuestros proyectos, brindando servicios de la más alta calidad.<br> 
+            ¡Confía en nosotros para todas tus necesidades de filmación aérea y levantamientos con drones!</p>
+    </section>
+    
+    <section id="servicios">
+        <h2 id="servicios-text" data-translate-key="servicios_title">Ofrecemos una amplia gama de servicios de filmación aérea, incluyendo:</h2>
+        <ul id="servicios_prestados">
+            <li data-translate-key="servicios_item1">Filmaciones para cine y televisión</li>
+            <li data-translate-key="servicios_item2">Inspecciones aéreas industriales</li>
+            <li data-translate-key="servicios_item3">Fotografía aérea profesional</li>
+            <li data-translate-key="servicios_item4">Levantamientos topográficos</li>
+        </ul>
+    </section>
+    
+    <h2 id="nuestros_trabajos" data-translate-key="trabajos_title">Algunos de nuestros trabajos</h2>
+    <section id="banner"  class="slideshow-container">
+        <div class="mySlides active">
+            <img src="" alt="Trabajos">
+        </div>
+        <div class="mySlides">
+            <img src="" alt="Trabajos">
+        </div>
+
+        <!-- Botones de navegación debajo de las imágenes -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section> 
+
+    <section id="contacto">
+        <h2 id="contacto-text" data-translate-key="contacto_title">Puede contactarnos a través de:</h2>
+        <ul>
+            <li><strong data-translate-key="contacto_telefono">Teléfono:</strong> <a href="tel:+34695246614">695 24 66 14</a></li>
+            <li><strong data-translate-key="contacto_email">Email:</strong> <a href="mailto:dronessur@gmail.com">dronessur@gmail.com</a></li>
+            <li><strong data-translate-key="contacto_direccion">Dirección:</strong> <a href="https://www.google.com/maps/dir//Lebrielectric+Sl.,+Calle+Juan+Illesca+Pav%C3%B3n,+21,+29670+San+Pedro+Alc%C3%A1ntara,+M%C3%A1laga/@36.4888598,-4.9859476,17z/data=!3m1!5s0xd732a19f6974471:0x407ccb766cefaa80!4m9!4m8!1m0!1m5!1m1!1s0xd732a19f3a1378d:0xb5b009e22d0f4e27!2m2!1d-4.9859476!2d36.4888598!3e0?entry=ttu">Juan Illesca Pavón, 21, 29670 San Pedro Alcántara, Málaga</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; Dronessur - <span data-translate-key="footer_derechos">Todos los derechos reservados.</span></p>
+    </footer>
+</body>
+</html>

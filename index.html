@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebrielectric</title>
+    <link rel="stylesheet" type="text/css" href="estilo_index.css" />
+    <link rel="icon" href="fotos/loguito.png">
+    <script src="traduccion_index.js"></script>
+    <script src="funciones_index.js"></script>
+    <script>
+        // Carga el idioma al cargar la página
+        window.onload = loadLanguage;
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <img id="logo" src="fotos/loguito.png" alt="Logo de Lebrielectric">
+        <h1 data-translate-key="header_title">Lebrielectric</h1>
+        <nav>
+            <ul id="cabecera">
+                <li><a href="#servicios" id="servicios-link" data-translate-key="menu_servicios">Servicios</a></li>
+                <li><a href="#contacto" id="contacto-link" data-translate-key="menu_contacto">Contacto</a></li>
+                <li><a href="dronessur.html" id="drones-link" data-translate-key="menu_drones">Filmación con Drones</a></li>
+            </ul>
+        </nav>
+        <div id="language">
+            <select onchange="translatePage()">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="sv">Svenska</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+    
+    <section id="intro">
+        <h2 data-translate-key="intro_title">¡Más de 20 años de experiencia!</h2>
+        <p id="introduccion" data-translate-key="intro_text">Somos Lebrielectric, una empresa dedicada a proporcionar servicios eléctricos y soluciones de domótica.<br> 
+            Con más de dos décadas de experiencia, nos enorgullece cuidar cada detalle para garantizar la satisfacción de nuestros clientes.<br>
+            Mantenemos una formalidad y profesionalidad ejemplares en todos nuestros proyectos, brindando servicios de la más alta calidad.<br> 
+            ¡Confía en nosotros para todas tus necesidades eléctricas y de domótica!</p>
+    </section>
+    
+    <section id="servicios">
+        <h2 id="servicios-text" data-translate-key="servicios_title">Ofrecemos una amplia gama de servicios eléctricos, incluyendo:</h2>
+        <ul id="servicios_prestados">
+            <li data-translate-key="servicios_item1">Instalaciones eléctricas en general</li>
+            <li data-translate-key="servicios_item2">Instalaciones Domóticas KNX</li>
+            <li data-translate-key="servicios_item3">Sistemas de recarga de vehículos eléctricos</li>
+            <li data-translate-key="servicios_item4">Estudios de ahorros energéticos</li>
+            <li data-translate-key="servicios_item5">Servicios Profesionales con Drones</li>
+            <li data-translate-key="servicios_item6">Imágenes, filmaciones y levantamientos aéreos</li>
+        </ul>
+    </section>
+    
+    <h2 id="nuestros_trabajos" data-translate-key="trabajos_title">Algunos de nuestros trabajos</h2>
+    <section id="banner" class="slideshow-container">
+        <div class="mySlides active">
+            <img src="" alt="Trabajos">
+        </div>
+        <div class="mySlides">
+            <img src="" alt="Trabajos">
+        </div>
+
+        <!-- Botones de navegación debajo de las imágenes -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>    
+
+    <section id="contacto">
+        <h2 id="contacto-text" data-translate-key="contacto_title">Puede contactarnos a través de:</h2>
+        <ul>
+            <li><strong data-translate-key="contacto_telefono">Teléfono:</strong> <a href="tel:+34666356185">666 35 61 85</a></li>
+            <li><strong data-translate-key="contacto_email">Email:</strong> <a href="mailto:lebrielectric@gmail.com">lebrielectric@gmail.com</a></li>
+            <li><strong data-translate-key="contacto_direccion">Dirección:</strong> <a href="https://www.google.com/maps/dir//Lebrielectric+Sl.,+Calle+Juan+Illesca+Pav%C3%B3n,+21,+29670+San+Pedro+Alc%C3%A1ntara,+M%C3%A1laga/@36.4888598,-4.9859476,17z/data=!3m1!5s0xd732a19f6974471:0x407ccb766cefaa80!4m9!4m8!1m0!1m5!1m1!1s0xd732a19f3a1378d:0xb5b009e22d0f4e27!2m2!1d-4.9859476!2d36.4888598!3e0?entry=ttu">Juan Illesca Pavón, 21, 29670 San Pedro Alcántara, Málaga</a></li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>&copy; Lebrielectric - <span data-translate-key="footer_derechos">Todos los derechos reservados.</span></p>
+    </footer>
+</body>
+</html>
