@@ -9,65 +9,22 @@
     <script src="traduccion_dronessur.js"></script>
     <script src="funciones_dronessur.js"></script>
     <script>
-        // Carga el idioma al cargar la página
-        window.onload = loadLanguage;
-
-        // Función para manejar las animaciones al cargar la página
-        function animateOnLoad() {
-            // Animar el header y el primer section al cargar la página
-            const header = document.querySelector('header');
-            const introSection = document.querySelector('#intro');
-            
-            header.classList.add('visible');
-            introSection.classList.add('visible');
-        }
-
-        // Función para manejar las animaciones al hacer scroll
-        function handleScrollAnimations() {
-            const elements = document.querySelectorAll('.animated');
-            
-            elements.forEach(element => {
-                if (isInViewport(element) && !element.classList.contains('visible')) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-
-        // Función para verificar si un elemento está en la pantalla
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        // Listener para detectar el desplazamiento y activar las animaciones
-        document.addEventListener('scroll', handleScrollAnimations);
-
-        // Llama a la función una vez al cargar la página para verificar los elementos iniciales
         window.onload = function() {
-            animateOnLoad(); // Animar el header y el primer section al cargar la página
-            handleScrollAnimations(); // Verificar animaciones al hacer scroll
+            loadLanguage(); // Cargar el idioma seleccionado al cargar la página
         };
-
     </script>
     
     <style>
-        /* Estilo inicial para ocultar los elementos */
-        .hidden {
+        /* Estilos para animaciones */
+        .animated {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        /* Estilo para mostrar los elementos */
         .visible {
             opacity: 1;
             transform: translateY(0);
-            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         @media (max-width: 768px) {
@@ -140,7 +97,7 @@
             </ul>
         </nav>
         <div id="language">
-            <select onchange="translatePage()">
+            <select id="languageSelect" onchange="translatePage()">
                 <option value="es">Español</option>
                 <option value="en">English</option>
                 <option value="fr">Français</option>
@@ -150,7 +107,7 @@
         </div>
     </header>
     
-    <section id="intro" class="animated hidden">
+    <section id="intro">
         <h2 data-translate-key="intro_title">¡Capturando el mundo desde el cielo!</h2>
         <p id="introduccion" data-translate-key="intro_text">Somos Dronessur, una empresa especializada en filmaciones aéreas y servicios con drones.<br> 
             Con más de una década de experiencia, nos enorgullece ofrecer imágenes impresionantes y videos de alta calidad desde las alturas.<br>
