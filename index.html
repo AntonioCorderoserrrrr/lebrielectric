@@ -9,8 +9,29 @@
     <script src="traduccion_index.js"></script>
     <script src="funciones_index.js"></script>
     <script>
-        // Carga el idioma al cargar la página
-        window.onload = loadLanguage;
+       // Carga el idioma al cargar la página
+       window.onload = loadLanguage;
+
+        // Función para manejar las animaciones al cargar la página
+        function animateOnLoad() {
+            // Animar el header y el primer section al cargar la página
+            const header = document.querySelector('header');
+            const introSection = document.querySelector('#intro');
+            
+            header.classList.add('visible');
+            introSection.classList.add('visible');
+        }
+
+        // Función para manejar las animaciones al hacer scroll
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.animated');
+            
+            elements.forEach(element => {
+                if (isInViewport(element) && !element.classList.contains('visible')) {
+                    element.classList.add('visible');
+                }
+            });
+        }
 
         // Función para verificar si un elemento está en la pantalla
         function isInViewport(element) {
@@ -23,23 +44,14 @@
             );
         }
 
-        // Función para manejar el desplazamiento y las animaciones
-        function handleScrollAnimations() {
-            const elements = document.querySelectorAll('.animated');
-            
-            elements.forEach(element => {
-                if (isInViewport(element) && !element.classList.contains('visible')) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-
         // Listener para detectar el desplazamiento y activar las animaciones
         document.addEventListener('scroll', handleScrollAnimations);
 
         // Llama a la función una vez al cargar la página para verificar los elementos iniciales
-        handleScrollAnimations();
-
+        window.onload = function() {
+            animateOnLoad(); // Animar el header y el primer section al cargar la página
+            handleScrollAnimations(); // Verificar animaciones al hacer scroll
+        };
 
     </script>
     <style>
@@ -117,7 +129,7 @@
 
 <body>
 
-    <header class="animated hidden">
+    <header>
         <img id="logo" src="fotos/loguito.png" alt="Logo de Lebrielectric">
         <h1 data-translate-key="header_title">Lebrielectric</h1>
         <nav>
