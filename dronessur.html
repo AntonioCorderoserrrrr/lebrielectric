@@ -12,6 +12,62 @@
         // Carga el idioma al cargar la página
         window.onload = loadLanguage;
     </script>
+    
+    <style>
+        @media (max-width: 768px) {
+            .map-container {
+                padding-bottom: 20%; /* Aspect ratio for smaller screens */
+            }
+        }
+
+        #direccion {
+            margin-bottom: 0px;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* Aspect ratio 4:3 */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 3em;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .map-container {
+                padding-bottom: 30%; /* Aún más pequeño en pantallas más grandes */
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 30%; /* Ancho máximo del contenedor en pantallas grandes */
+            }
+        }
+
+        @media (max-width: 767px) {
+            /* Estilos para pantallas móviles */
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                width: calc(50% - 20px); /* Dos elementos por fila */
+                margin: 0 10px; /* Espacio entre elementos */
+                text-align: center;
+                box-sizing: border-box; /* Para que el padding no incremente el ancho */
+                margin-bottom: 1em;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,6 +78,7 @@
         <nav>
             <ul id="cabecera">
                 <li><a href="#servicios" id="servicios-link" data-translate-key="menu_servicios">Servicios</a></li>
+                <li><a href="#direccion" id="contacto-link" data-translate-key="direccion_title">Donde encontrarnos</a></li>
                 <li><a href="#contacto" id="contacto-link" data-translate-key="menu_contacto">Contacto</a></li>
                 <li><a href="index.html" id="drones-link" data-translate-key="menu_drones">Electricidad</a></li>
             </ul>
@@ -69,12 +126,20 @@
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </section> 
 
+    <section id="direccion">
+        <h2 id="direccion-text" data-translate-key="direccion_title">Donde encontrarnos</h2>      
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.704026922238!2d-4.98852252363047!3d36.48886408518679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd732a19f3a1378d%3A0xb5b009e22d0f4e27!2sLebrielectric%20Sl.!5e0!3m2!1ses!2ses!4v1719853408141!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>        <div class="direccion-info">
+            <a href="https://www.google.com/maps/dir//Lebrielectric+Sl.,+Calle+Juan+Illesca+Pav%C3%B3n,+21,+29670+San+Pedro+Alc%C3%A1ntara,+M%C3%A1laga/@36.4888598,-4.9859476,17z/data=!3m1!5s0xd732a19f3a1378d:0xb5b009e22d0f4e27!4m9!4m8!1m0!1m5!1m1!1s0xd732a19f3a1378d:0xb5b009e22d0f4e27!2m2!1d-4.9859476!2d36.4888598!3e0?entry=ttu" target="_blank">Juan Illesca Pavón, 21, 29670 San Pedro Alcántara, Málaga</a>
+        </div>  
+    </section>
+
     <section id="contacto">
         <h2 id="contacto-text" data-translate-key="contacto_title">Puede contactarnos a través de:</h2>
         <ul>
             <li><strong data-translate-key="contacto_telefono">Teléfono:</strong> <a href="tel:+34695246614">695 24 66 14</a></li>
             <li><strong data-translate-key="contacto_email">Email:</strong> <a href="mailto:dronessur@gmail.com">dronessur@gmail.com</a></li>
-            <li><strong data-translate-key="contacto_direccion">Dirección:</strong> <a href="https://www.google.com/maps/dir//Lebrielectric+Sl.,+Calle+Juan+Illesca+Pav%C3%B3n,+21,+29670+San+Pedro+Alc%C3%A1ntara,+M%C3%A1laga/@36.4888598,-4.9859476,17z/data=!3m1!5s0xd732a19f6974471:0x407ccb766cefaa80!4m9!4m8!1m0!1m5!1m1!1s0xd732a19f3a1378d:0xb5b009e22d0f4e27!2m2!1d-4.9859476!2d36.4888598!3e0?entry=ttu">Juan Illesca Pavón, 21, 29670 San Pedro Alcántara, Málaga</a></li>
         </ul>
     </section>
 

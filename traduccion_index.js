@@ -17,7 +17,7 @@ var translations = {
         "contacto_title": "Puede contactarnos a través de:",
         "contacto_telefono": "Teléfono:",
         "contacto_email": "Email:",
-        "contacto_direccion": "Dirección:",
+        "direccion_title": "Donde encontrarnos", 
         "footer_derechos": "Todos los derechos reservados."
     },
     "en": {
@@ -38,7 +38,7 @@ var translations = {
         "contacto_title": "You can contact us through:",
         "contacto_telefono": "Phone:",
         "contacto_email": "Email:",
-        "contacto_direccion": "Address:",
+        "direccion_title": "Where to find us", 
         "footer_derechos": "All rights reserved."
     },
     "fr": {
@@ -59,7 +59,7 @@ var translations = {
         "contacto_title": "Vous pouvez nous contacter via :",
         "contacto_telefono": "Téléphone :",
         "contacto_email": "E-mail :",
-        "contacto_direccion": "Adresse :",
+        "direccion_title": "Où nous trouver", 
         "footer_derechos": "Tous les droits sont réservés."
     },
     "sv": {
@@ -80,7 +80,7 @@ var translations = {
         "contacto_title": "Du kan kontakta oss genom:",
         "contacto_telefono": "Telefon:",
         "contacto_email": "E-post:",
-        "contacto_direccion": "Adress:",
+        "direccion_title": "Var hittar du oss", 
         "footer_derechos": "Alla rättigheter förbehållna."
     },
     "ar": {
@@ -101,7 +101,7 @@ var translations = {
         "contacto_title": "يمكنك الاتصال بنا من خلال:",
         "contacto_telefono": "هاتف:",
         "contacto_email": "البريد الإلكتروني:",
-        "contacto_direccion": "العنوان:",
+        "direccion_title": "أين نجدك", 
         "footer_derechos": "جميع الحقوق محفوظة."
     }
 };

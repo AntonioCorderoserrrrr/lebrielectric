@@ -18,7 +18,7 @@ const translations = {
         "contacto_title": "Puede contactarnos a través de:",
         "contacto_telefono": "Teléfono:",
         "contacto_email": "Email:",
-        "contacto_direccion": "Dirección:",
+        "direccion_title": "Donde encontrarnos",
         "footer_derechos": "Todos los derechos reservados."
 
     },
@@ -41,7 +41,7 @@ const translations = {
         "contacto_title": "You can contact us via:",
         "contacto_telefono": "Phone:",
         "contacto_email": "Email:",
-        "contacto_direccion": "Address:",
+        "direccion_title": "Where to find us",
         "footer_derechos": "All rights reserved."
 
     },
@@ -64,7 +64,7 @@ const translations = {
         "contacto_title": "Contactez-nous",
         "contacto_telefono": "Téléphone:",
         "contacto_email": "Email:",
-        "contacto_direccion": "Adresse:",
+        "direccion_title": "Où nous trouver",
         "footer_derechos": "Tous les droits sont réservés."
 
     },
@@ -88,7 +88,7 @@ const translations = {
         "contacto_telefono": "Telefon:",
         "contacto_email": "E-post:",
         "contacto_direccion": "Adress:",
-        "contacto_direccion": "Dirección:",
+        "direccion_title": "Var hittar du oss",
         "footer_derechos": "Alla rättigheter förbehållna."
 
     },
@@ -111,7 +111,7 @@ const translations = {
         "contacto_title": "يمكنك الاتصال بنا عبر:",
         "contacto_telefono": "الهاتف:",
         "contacto_email": "البريد الإلكتروني:",
-        "contacto_direccion": "العنوان:",
+        "direccion_title": "أين نجدك",
         "footer_derechos": "جميع الحقوق محفوظة."
 
         }
