@@ -11,8 +11,54 @@
     <script>
         // Carga el idioma al cargar la página
         window.onload = loadLanguage;
+
+        // Función para verificar si un elemento está en la pantalla
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Función para manejar el desplazamiento y las animaciones
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.animated');
+            
+            elements.forEach(element => {
+                if (isInViewport(element) && !element.classList.contains('visible')) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Listener para detectar el desplazamiento y activar las animaciones
+        document.addEventListener('scroll', handleScrollAnimations);
+
+        // Llama a la función una vez al cargar la página para verificar los elementos iniciales
+        handleScrollAnimations();
+
+
     </script>
     <style>
+        /* Estilo inicial para ocultar los elementos */
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+
+
+
         @media (max-width: 768px) {
             .map-container {
                 padding-bottom: 20%; /* Aspect ratio for smaller screens */
@@ -71,7 +117,7 @@
 
 <body>
 
-    <header>
+    <header class="animated hidden">
         <img id="logo" src="fotos/loguito.png" alt="Logo de Lebrielectric">
         <h1 data-translate-key="header_title">Lebrielectric</h1>
         <nav>
@@ -93,7 +139,7 @@
         </div>
     </header>
     
-    <section id="intro">
+    <section id="intro" class="animated hidden">
         <h2 data-translate-key="intro_title">¡Más de 20 años de experiencia!</h2>
         <p id="introduccion" data-translate-key="intro_text">Somos Lebrielectric, una empresa dedicada a proporcionar servicios eléctricos y soluciones de domótica.<br> 
             Con más de dos décadas de experiencia, nos enorgullece cuidar cada detalle para garantizar la satisfacción de nuestros clientes.<br>
@@ -101,7 +147,7 @@
             ¡Confía en nosotros para todas tus necesidades eléctricas y de domótica!</p>
     </section>
     
-    <section id="servicios">
+    <section id="servicios" class="animated hidden">
         <h2 id="servicios-text" data-translate-key="servicios_title">Ofrecemos una amplia gama de servicios eléctricos, incluyendo:</h2>
         <ul id="servicios_prestados">
             <li data-translate-key="servicios_item1">Instalaciones eléctricas en general</li>
@@ -113,8 +159,8 @@
         </ul>
     </section>
     
-    <h2 id="nuestros_trabajos" data-translate-key="trabajos_title">Algunos de nuestros trabajos</h2>
-    <section id="banner" class="slideshow-container">
+    <section id="banner" class="slideshow-container" class="animated hidden">
+        <h2 id="nuestros_trabajos" data-translate-key="trabajos_title">Algunos de nuestros trabajos</h2>
         <div class="mySlides active">
             <img src="" alt="Trabajos">
         </div>
@@ -127,7 +173,7 @@
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </section>    
 
-    <section id="direccion">
+    <section id="direccion" class="animated hidden">
         <h2 id="direccion-text" data-translate-key="direccion_title">Donde encontrarnos</h2>      
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.704026922238!2d-4.98852252363047!3d36.48886408518679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd732a19f3a1378d%3A0xb5b009e22d0f4e27!2sLebrielectric%20Sl.!5e0!3m2!1ses!2ses!4v1719853408141!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -137,7 +183,7 @@
         </div>  
     </section>
 
-    <section id="contacto">
+    <section id="contacto" class="animated hidden">
         <h2 id="contacto-text" data-translate-key="contacto_title">Puede contactarnos a través de</h2>
         <ul>
             <li><strong data-translate-key="contacto_telefono">Teléfono:</strong> <a href="tel:+34666356185">666 35 61 85</a></li>
